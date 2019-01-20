@@ -8,6 +8,6 @@
       <h1>CS 313 Assignments</h1>
 
       <br/>
-      <a href="assignments.php">My first assignment</a>
+      <a href="hello.php">My first assignment</a>
    </body>
 </html>
