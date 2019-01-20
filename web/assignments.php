@@ -7,5 +7,6 @@
    <body>
       <h1>CS 313 Assignments</h1>
       <img src="images/under_construct.gif"/>
+      <a href="assignments.php">My first assignment</a>
    </body>
 </html>
