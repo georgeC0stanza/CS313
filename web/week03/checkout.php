@@ -40,7 +40,7 @@
         <p>Address</p>
         <textarea id="address" required rows="2" placeholder="street address, city, state, zip"></textarea>
         <br/>
-        <input type="button" class="button" Value= "Purchase" onclick="purchase()"/>;
+        <input type="button" class="button" Value= "Purchase" onclick="purchase()"/>
 
 
       <br/>

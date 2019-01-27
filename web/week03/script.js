@@ -45,7 +45,7 @@ function purchase(){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState>3 && xhttp.status==200) { 
-            window.location = "purchase.php";
+            window.location = "confirmation.php";
          }
     };
     xhttp.open("POST",  "purchase.php", true);
