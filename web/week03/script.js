@@ -11,7 +11,7 @@ function addToCart(itemName){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState>3 && xhttp.status==200) { 
-           // alert("Your order has been placed!");
+            alert("Cart Updated!");
          }
     };
     xhttp.open("POST",  "addItem.php", true);
@@ -26,7 +26,7 @@ function removeFromCart(itemName){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState>3 && xhttp.status==200) { 
-           // alert("Your order has been placed!");
+            alert("Cart Updated!");
          }
     };
     xhttp.open("POST",  "removeItem.php", true);

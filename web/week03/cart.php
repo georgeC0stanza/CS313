@@ -1,6 +1,6 @@
 <?php
     session_start();
-    echo session_id();
+    
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +32,7 @@
 
         }
 
+        echo $_SESSION["cart"];
 
 
 ?>
