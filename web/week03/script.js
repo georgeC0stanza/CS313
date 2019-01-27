@@ -10,8 +10,8 @@
 function addToCart(itemName){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-        if (xhr.readyState>3 && xhr.status==200) { 
-            success(xhr.responseText);
+        if (xhttp.readyState>3 && xhttp.status==200) { 
+            success(xhttp.responseText);
             alert("Your order has been placed!");
          }
     };
