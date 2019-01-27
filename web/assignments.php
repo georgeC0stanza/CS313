@@ -9,5 +9,7 @@
 
       <br/>
       <a href="hello.php">My first assignment</a>
+      <br/>
+      <a href="week03\browse.php">Week 3</a>
    </body>
 </html>
