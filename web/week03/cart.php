@@ -19,7 +19,7 @@
     $path = "../images/week03";
 
 
-        foreach ($_SESSION["cart"][i] as $element) {
+        foreach ($_SESSION["cart"][] as $element) {
 
 
             // do something with the file

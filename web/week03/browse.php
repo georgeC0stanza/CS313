@@ -35,7 +35,7 @@
         closedir($handle);
     }
     $_session["cart"][] = "russia (1).jpg";
-    echo $_SESSION["cart"];
+    echo $_SESSION["cart"][];
 ?>
 
 
