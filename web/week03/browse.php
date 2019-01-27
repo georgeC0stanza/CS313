@@ -18,7 +18,7 @@
             if ('..' === $file) continue;
 
             // do something with the file
-            echo "<img src=\"", $path , $file, "\"> ";
+            echo "<img src=\"", $path , "\\", $file, "\"> ";
             echo "<p>", $file , "</p>" ;
 
             echo "<input type=\"button\" class=\"button\" Value= \"Add to Cart\" onclick=\"addToCart()\"/>";
@@ -28,8 +28,6 @@
         }
         closedir($handle);
     }
-
-
 
 
 ?>
