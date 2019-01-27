@@ -13,7 +13,8 @@
    </head>
    <body>
     <form name="Cart" action = "" id = "week03" method="POST" onsubmit="return validateForm()">
-    <h1>Cart</h1>
+    <h1>Purchase Complete!</h1>
+
 
 <?php
     $path = "../images/week03";
@@ -36,7 +37,6 @@
 
 
 ?>
-
 
 
 
