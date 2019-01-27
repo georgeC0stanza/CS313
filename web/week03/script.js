@@ -1,3 +1,49 @@
+
+
+
+
+
+
+
+
+
+function addToCart(itemName){
+    var xhttp = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState>3 && xhr.status==200) { 
+            success(xhr.responseText);
+            alert("Your order has been placed!");
+         }
+    };
+    xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhttp.open("POST",  "addItem.php", true);
+    xhttp.send("item=" + itemName);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // get focus
 function getfocus(target){
     document.getElementById(target).focus();

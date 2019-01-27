@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
    <head>
@@ -7,11 +11,10 @@
     <link rel="stylesheet" type="text/css" href="css.css">
    </head>
    <body>
-      <h1>Browse Items</h1>
-
+    <form name="Browse" action = "" id = "week03" method="POST" onsubmit="return validateForm()">
+    <h1>Browse Items</h1>
 
 <?php
-
     $path = "../images/week03";
 
     if ($handle = opendir($path)) {
@@ -23,7 +26,7 @@
             echo "<img src=\"", $path , "\\", $file, "\"> ";
             echo "<p>", $file , "</p>" ;
 
-            echo "<input type=\"button\" class=\"button\" Value= \"Add to Cart\" onclick=\"addToCart()\"/>";
+            echo "<input type=\"button\" class=\"button\" name=", $file, "Value= \"Add to Cart\" onclick=\"addToCart(this.name)\"/>";
 
 
 
