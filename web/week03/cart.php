@@ -11,8 +11,8 @@
     <link rel="stylesheet" type="text/css" href="css.css">
    </head>
    <body>
-    <form name="Browse" action = "" id = "week03" method="POST" onsubmit="return validateForm()">
-    <h1>Browse Items</h1>
+    <form name="Cart" action = "" id = "week03" method="POST" onsubmit="return validateForm()">
+    <h1>Cart</h1>
 
 <?php
     $path = "../images/week03";
@@ -26,9 +26,9 @@
             echo "<img src=\"", $path , "\\", $file, "\"> ";
             echo "<p>", $file , "</p>" ;
 
-            echo "<input type=\"button\" class=\"button\" name=", $file, "\" Value= \"Add to Cart\" onclick=\"addToCart(this.name)\"/>";
-            echo "<br />";
+            echo "<input type=\"button\" class=\"button\" name=", $file, "\" Value= \"Remove from Cart\" onclick=\"removeFromCart(this.name)\"/>";
 
+            echo "<br />";
 
         }
         closedir($handle);
@@ -43,6 +43,7 @@
       <a href="hello.php">HOME</a>
       <br/>
       <a href="week03\browse.php">Browse Items</a>
+
       </form>
    </body>
 </html>

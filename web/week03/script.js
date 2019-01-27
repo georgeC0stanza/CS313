@@ -11,13 +11,29 @@ function addToCart(itemName){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState>3 && xhttp.status==200) { 
-            alert("Your order has been placed!");
+           // alert("Your order has been placed!");
          }
     };
     xhttp.open("POST",  "addItem.php", true);
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhttp.send("item=" + itemName);
 }
+
+
+
+
+function removeFromCart(itemName){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState>3 && xhttp.status==200) { 
+           // alert("Your order has been placed!");
+         }
+    };
+    xhttp.open("POST",  "removeItem.php", true);
+    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhttp.send("item=" + itemName);
+}
+
 
 
 
