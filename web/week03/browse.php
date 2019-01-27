@@ -3,6 +3,8 @@
    <head>
      <meta charset="utf-8"/>
      <title>Week 03</title>
+     <script type="text/javascript" src="213.05.PonderProblem.js"></script>
+    <link rel="stylesheet" type="text/css" href="css.css">
    </head>
    <body>
       <h1>Browse Items</h1>
