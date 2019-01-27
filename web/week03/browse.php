@@ -26,7 +26,7 @@
             echo "<img src=\"", $path , "\\", $file, "\"> ";
             echo "<p>", $file , "</p>" ;
 
-            echo "<input type=\"button\" class=\"button\" name=", $file, "Value= \"Add to Cart\" onclick=\"addToCart(this.name)\"/>";
+            echo "<input type=\"button\" class=\"button\" name=", $file, "\" Value= \"Add to Cart\" onclick=\"addToCart(this.name)\"/>";
 
 
 
