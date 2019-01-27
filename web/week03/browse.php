@@ -40,9 +40,9 @@
 
 
       <br/>
-      <a href="hello.php">HOME</a>
+      <a href="..\hello.php">HOME</a>
       <br/>
-      <a href="week03\browse.php">Browse Items</a>
+      <a href="cart.php">Cart</a>
       </form>
    </body>
 </html>
