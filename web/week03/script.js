@@ -15,8 +15,8 @@ function addToCart(itemName){
             alert("Your order has been placed!");
          }
     };
-    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhttp.open("POST",  "addItem.php", true);
+    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhttp.send("item=" + itemName);
 }
 
