@@ -48,7 +48,7 @@ function purchase(){
             alert("Purchased!");
          }
     };
-    xhttp.open("POST",  "removeItem.php", true);
+    xhttp.open("POST",  "purchase.php", true);
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhttp.send("address=" + address);
 }
