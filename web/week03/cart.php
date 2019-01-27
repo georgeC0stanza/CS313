@@ -32,15 +32,14 @@
 
         }
 
-        echo $_SESSION["cart"];
+        echo $_SESSION["cart"][];
 
 
 ?>
 
 
 
-      <br/>
-      <a href="..\hello.php">HOME</a>
+
       <br/>
       <a href="browse.php">Browse Items</a>
 

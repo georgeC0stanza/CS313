@@ -41,7 +41,7 @@
 
 
       <br/>
-      <a href="..\hello.php">HOME</a>
+      <a href="..\index.html">HOME</a>
       <br/>
       <a href="cart.php">Cart</a>
       </form>
