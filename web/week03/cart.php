@@ -38,7 +38,7 @@
 ?>
 
 
-
+      <a href="checkout.php">Checkout</a>
 
       <br/>
       <a href="browse.php">Browse Items</a>
