@@ -10,7 +10,7 @@
 
 <?php
 
-    $path = "../images";
+    $path = "../images/week03";
 
     if ($handle = opendir($path)) {
         while (false !== ($file = readdir($handle))) {
