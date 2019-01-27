@@ -17,22 +17,20 @@
 <?php
     $path = "../images/week03";
 
-    if ($handle = opendir($path)) {
-        while (false !== ($file = readdir($handle))) {
-            if ('.' === $file) continue;
-            if ('..' === $file) continue;
+
+        foreach ($_SESSION["cart"][i] as $element) {
+
 
             // do something with the file
-            echo "<img src=\"", $path , "\\", $file, "\"> ";
-            echo "<p>", $file , "</p>" ;
+            echo "<img src=\"", $path , "\\", $element, "\"> ";
+            echo "<p>", $element , "</p>" ;
 
-            echo "<input type=\"button\" class=\"button\" name=", $file, "\" Value= \"Remove from Cart\" onclick=\"removeFromCart(this.name)\"/>";
+            echo "<input type=\"button\" class=\"button\" name=", $element, "\" Value= \"Remove from Cart\" onclick=\"removeFromCart(this.name)\"/>";
 
             echo "<br />";
 
         }
-        closedir($handle);
-    }
+
 
 
 ?>
