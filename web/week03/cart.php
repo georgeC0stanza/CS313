@@ -32,7 +32,7 @@
 
         }
 
-        echo $_SESSION["cart"][];
+        echo $_SESSION["cart"];
 
 
 ?>
