@@ -20,6 +20,12 @@ CREATE TABLE cardset
 
 insert into person (username, passwrd)
     values ('david001', 'thisismypwrd');
+    
+insert into person (username, passwrd)
+    values ('dako', 'his pass');
 
 insert into cardset (user_id, cardtext_front, cardtext_back)
     values ( 1 , 'front of card', 'back of card' );
+
+insert into cardset (user_id, cardtext_front, cardtext_back)
+    values ( 1 , 'front of card 2', 'back of card 2' );
