@@ -58,6 +58,20 @@ $db = get_db();
  
         echo "<p>  $cardtext_front : $cardtext_back! <p>";
     }
+
+    $statement = $db->prepare("SELECT cardtext_front, cardtext_back FROM cardset where  user_id = 1");
+    $statement->execute();
+    // Go through each result
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+    {
+        // The variable "row" now holds the complete record for that
+        // row, and we can access the different values based on their
+        // name
+        $cardtext_front = $row['cardtext_front'];
+        $cardtext_back = $row['cardtext_back'];
+ 
+        echo "<p>  $cardtext_front : $cardtext_back! <p>";
+    }
 ?>
 
       </div>
