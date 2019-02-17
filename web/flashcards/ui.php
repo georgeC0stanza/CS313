@@ -15,6 +15,7 @@
     <script>
 
         function login(username){
+            print("start.");
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (xhttp.readyState>3 && xhttp.status==200) { 
@@ -24,6 +25,9 @@
             xhttp.open("POST",  "signin.php", true);
             xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhttp.send("username=" + username);
+
+            print("end.");
+            return false;
         }
 
     </script>
