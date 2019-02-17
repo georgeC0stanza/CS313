@@ -51,7 +51,7 @@
     <br/>
 
 
-    <form name="users" action = "cards.php" id = "username" method="POST" onsubmit="return login()">
+    <form name="users" action = "cards.php" id = "username" method="POST" onsubmit="return login(this.id)">
       <div class="whole">
           <h1> Welcome</h1>
           <hr/>

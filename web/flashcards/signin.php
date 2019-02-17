@@ -4,7 +4,7 @@
     require_once('dbconnect.php');
     $db = get_db();
 
-    $username = $_POST["username"];
+    $username = htmlspecialchars($_POST["username"]);
 
     $query = "SELECT id FROM person WHERE username = '$username'";
     $statement = $db->prepare($query);

@@ -11,11 +11,30 @@
      <meta charset="utf-8"/>
      <title>Week 03</title>
      <script type="text/javascript" src="script.js"></script>
+     <script>
+         function addNewCard(){
+            $new_front = document.getElementById(new_front).value;
+            $new_back = document.getElementById(new_back).value;
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (xhttp.readyState>3 && xhttp.status==200) { 
+                    alert("card added!");
+                }
+                if (xhttp.status >= 300) { 
+                    alert("error adding card!");
+                }
+            };
+            xhttp.open("POST",  "addcard.php", true);
+            xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhttp.send("new_front=" + new_front + "&new_back=" + new_back);
+            return false;
+         }
+     </script>
      <script> 
      
         function flipcard(card_id)
         {
-           // card.parentElement.;
            document.getElementById(card_id).style.visibility = "visible";
         } 
         
@@ -27,7 +46,7 @@
     <body>
     <header>
         <div class="header">
-          <h1>What Do We Have Stored in the Data Store?</h1>
+          <h1>Study Time!</h1>
           <div class="headerSmall">
           </div>
         </div> 
@@ -35,9 +54,9 @@
     <br/>
 
 
-    <form name="users" action = "" id = "usersname" method="POST" onsubmit="return validateForm()">
+    <form name="users" action = "" id = "usersname" method="POST" onsubmit="return addNewCard()">
       <div class="whole">
-          <h1> What would You like Today?</h1>
+          <h1> What would You like To study Today?</h1>
           <hr/>
 
       <div class="section">
@@ -46,7 +65,7 @@
     $user_id = $_session["user_id"];
 
 //    echo ($user_id);
-    $statement = $db->prepare("SELECT id, cardtext_front, cardtext_back FROM cardset WHERE user_id = 1 ");
+    $statement = $db->prepare("SELECT id, cardtext_front, cardtext_back FROM cardset WHERE user_id = '$user_id' ");
     $statement->execute();
     // Go through each result
     $count_id = 1;
@@ -68,54 +87,17 @@
     }
 
 ?>
+        <p>Add a New Card:</p>
+        <textarea id="new_front" required placeholder="Front of Card"></textarea>
+        <textarea id="new_back" required placeholder="Back of Card"></textarea>
+        <br/>
+        <input type="submit" class="button" value="Submit">
+        <br/>
+      </div>
 
-      </div>
-      <div>        
-        <p id="page"></p> 
-      </div>
     </form>
 
   </body>
 </html>
 
 
-<!--
-
-   <body>
-    <form name="Browse" action = "" id = "week03" method="POST" onsubmit="return validateForm()">
-    <h1>Browse Items</h1>
-
-<?php
-/*
-    $path = "../images/week03";
-
-    if ($handle = opendir($path)) {
-        while (false !== ($file = readdir($handle))) {
-            if ('.' === $file) continue;
-            if ('..' === $file) continue;
-
-            // do something with the file
-            echo "<img src=\"", $path , "\\", $file, "\"> ";
-            echo "<p>", $file , "</p>" ;
-
-            echo "<input type=\"button\" class=\"button\" name=", $file, "\" Value= \"Add to Cart\" onclick=\"addToCart(this.name)\"/>";
-            echo "<br />";
-
-
-        }
-        closedir($handle);
-    }
-    $_session["cart"][] = "russia (1).jpg";
-    echo $_SESSION["cart"]
-    */
-?>
-
-
-
-      <br/>
-      <a href="..\index.html">HOME</a>
-      <br/>
-      <a href="cart.php">Cart</a>
-      </form>
-   </body>
-</html>
