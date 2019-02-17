@@ -13,8 +13,8 @@
      <script type="text/javascript" src="script.js"></script>
      <script>
          function addNewCard(){
-            $new_front = document.getElementById(new_front).value;
-            $new_back = document.getElementById(new_back).value;
+            $new_front = document.getElementById(new_front).innertext;
+            $new_back = document.getElementById(new_back).innertext;
 
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
