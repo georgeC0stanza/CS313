@@ -5,7 +5,7 @@
     $db = get_db();
 
     $username = $_POST["username"];
-    
+
     $query = "SELECT id FROM person WHERE username = '$username'";
     $statement = $db->prepare($query);
     $statement->execute();
