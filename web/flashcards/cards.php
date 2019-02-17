@@ -13,9 +13,11 @@
      <script type="text/javascript" src="script.js"></script>
      <script> 
      
-        function flipcard(card)
+        function flipcard(card_id)
         {
            // card.parentElement.;
+           document.getElementById(card_id).type = visible;
+
         } 
         
      
@@ -48,6 +50,7 @@
     $statement = $db->prepare("SELECT id, cardtext_front, cardtext_back FROM cardset WHERE user_id = 1 ");
     $statement->execute();
     // Go through each result
+    $count_id = 1;
     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     {
         // The variable "row" now holds the complete record for that
@@ -56,10 +59,11 @@
         $card_number = $row['id'];
         $cardtext_front = $row['cardtext_front'];
         $cardtext_back = $row['cardtext_back'];
- 
+        
+
         echo ("<div id='$card_number'> 
-                <span value='$cardtext_front'></span>
-                <span type='hidden' value='$cardtext_back'> </span>
+                <span>$cardtext_front</span>
+                <span type ='hidden' id='$count_id' onmouseover='flipcard(this.id)'>$cardtext_back </span>
                 <button type='button' onclick='flipcard(this)'>Flip Card!</button> ");
     }
 
