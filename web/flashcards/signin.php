@@ -7,10 +7,6 @@
 $query = "SELECT id FROM person WHERE username = '$_POST['username']'";
     $statement = $db->prepare($query);
     $statement->execute();
-    $users = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $_session["user_id"] = $statement->fetchAll(PDO::FETCH_ASSOC);
     
-    foreach ($users as $user) {
-        $_session["user_id"] = $user;
-    }
-
 ?>
