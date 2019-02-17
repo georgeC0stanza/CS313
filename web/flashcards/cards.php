@@ -58,8 +58,8 @@
         $cardtext_back = $row['cardtext_back'];
  
         echo ("<div id='$card_number'> 
-                <textarea value='$cardtext_front'></textarea>
-                <textarea type='hidden' value='$cardtext_back'> </textarea>
+                <span value='$cardtext_front'></span>
+                <span type='hidden' value='$cardtext_back'> </span>
                 <button type='button' onclick='flipcard(this)'>Flip Card!</button> ");
     }
 
