@@ -13,5 +13,7 @@
       <a href="week03\browse.php">Week 3</a>
       <br />
       <a href="ui.php">05</a>
+      <br />
+      <a href="flashcards/ui.php">week06</a>
    </body>
 </html>
