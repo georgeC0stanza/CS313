@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="css.css">
    </head>
 
-    body>
+    <body>
     <header>
         <div class="header">
           <h1>What Do We Have Stored in the Data Store?</h1>
