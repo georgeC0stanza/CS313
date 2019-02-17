@@ -15,22 +15,19 @@
     <script>
 
         function login(username){
-            console.log("start.");
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (xhttp.readyState>3 && xhttp.status==200) { 
                     alert("logged in!");
                 }
                 if (xhttp.status >= 300) { 
-                    alert("error!");
+                    alert("error logging in!");
                 }
             };
             xhttp.open("POST",  "signin.php", true);
             xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhttp.send("username=" + username);
-
-            console.log("end.");
-            return false;
+            return true;
         }
 
     </script>
@@ -54,7 +51,7 @@
     <br/>
 
 
-    <form name="users" action = "" id = "username" method="POST" onsubmit="return login()">
+    <form name="users" action = "cards.php" id = "username" method="POST" onsubmit="return login()">
       <div class="whole">
           <h1> Welcome</h1>
           <hr/>
