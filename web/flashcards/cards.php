@@ -16,8 +16,7 @@
         function flipcard(card_id)
         {
            // card.parentElement.;
-           document.getElementById(card_id).type = visible;
-
+           document.getElementById(card_id).style.visibility = "visible";
         } 
         
      
@@ -63,7 +62,7 @@
 
         echo ("<div id='$card_number'> 
                 <span>$cardtext_front</span>
-                <span type ='hidden' id='$count_id' onmouseover='flipcard(this.id)'>$cardtext_back </span>
+                <span hidden id='$count_id' onmouseover='flipcard(this.id)'>$cardtext_back </span>
                 <button type='button' onclick='flipcard(this)'>Flip Card!</button> ");
     }
 
