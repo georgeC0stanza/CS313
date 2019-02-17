@@ -43,6 +43,8 @@
 
 <?php
     $user_id = $_session["user_id"];
+
+    echo (user_id);
     $statement = $db->prepare("SELECT id, cardtext_front, cardtext_back FROM cardset WHERE user_id = '$user_id'");
     $statement->execute();
     // Go through each result
@@ -73,13 +75,14 @@
 </html>
 
 
-
+<!--
 
    <body>
     <form name="Browse" action = "" id = "week03" method="POST" onsubmit="return validateForm()">
     <h1>Browse Items</h1>
 
 <?php
+/*
     $path = "../images/week03";
 
     if ($handle = opendir($path)) {
@@ -100,6 +103,7 @@
     }
     $_session["cart"][] = "russia (1).jpg";
     echo $_SESSION["cart"]
+    */
 ?>
 
 
