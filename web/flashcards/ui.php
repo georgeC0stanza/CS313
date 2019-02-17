@@ -21,6 +21,9 @@
                 if (xhttp.readyState>3 && xhttp.status==200) { 
                     alert("logged in!");
                 }
+                if (xhttp.status >= 300) { 
+                    alert("error!");
+                }
             };
             xhttp.open("POST",  "signin.php", true);
             xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
