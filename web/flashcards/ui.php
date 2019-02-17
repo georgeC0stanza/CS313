@@ -15,7 +15,7 @@
     <script>
 
         function login(username){
-            print("start.");
+            console.log("start.");
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (xhttp.readyState>3 && xhttp.status==200) { 
@@ -26,7 +26,7 @@
             xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhttp.send("username=" + username);
 
-            print("end.");
+            console.log("end.");
             return false;
         }
 
