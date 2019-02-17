@@ -65,7 +65,7 @@
     $user_id = $_session["user_id"];
 
 //    echo ($user_id);
-    $statement = $db->prepare("SELECT id, cardtext_front, cardtext_back FROM cardset WHERE user_id = '$user_id' ");
+    $statement = $db->prepare("SELECT id, cardtext_front, cardtext_back FROM cardset WHERE user_id = 1 ");
     $statement->execute();
     // Go through each result
     $count_id = 1;
