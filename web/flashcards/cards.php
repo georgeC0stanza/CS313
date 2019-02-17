@@ -62,7 +62,7 @@
 
         echo ("<div id='$card_number'> 
                 <span>$cardtext_front</span>
-                <span hidden id='$count_id' onmouseover='flipcard(this.id)'>$cardtext_back </span>
+                <span hidden id='$count_id>$cardtext_back </span>
                 <button type='button' onclick='flipcard(this)'>Flip Card!</button> ");
     }
 
