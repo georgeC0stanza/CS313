@@ -22,7 +22,6 @@
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (xhttp.readyState>3 && xhttp.status==200) { 
-                    alert("logged in!");
                     isreturn = true;
                 }
                 else if (xhttp.status >= 500) { 

@@ -63,9 +63,9 @@
 
 <?php
     $user_id = $_session["user_id"];
-    $user_id = 1 ;
+   //$user_id = 1 ;
 
-//    echo ($user_id);
+    echo ($user_id);
     $statement = $db->prepare("SELECT id, cardtext_front, cardtext_back FROM cardset WHERE user_id = '$user_id' ");
     $statement->execute();
     // Go through each result
