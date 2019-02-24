@@ -37,9 +37,9 @@
         }
 
         function newAccount(){
-            val username = document.getElementById("create_username").value;
-            val password = document.getElementById("create_password").value;
-            val password2 = document.getElementById("create_password2").value;
+            var username = document.getElementById("create_username").value;
+            var password = document.getElementById("create_password").value;
+            var password2 = document.getElementById("create_password2").value;
 
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
@@ -97,7 +97,7 @@
 
     </form>
     <br/>
-    <form name="form_new_account" action = "" id = "new_account" method="POST" onsubmit="return newAccount()">
+    <form name="form_new_account" action = "ui.php" id = "new_account" method="POST" onsubmit="return newAccount()">
         <div class="whole">
             <h1>Create a New Account</h1>
             <hr/>
