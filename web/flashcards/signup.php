@@ -18,9 +18,9 @@
     }
     else
     {
-        header('HTTP/1.1 599 Internal Server Error');
+        header('HTTP/1.1 500 Internal Server Error');
         header('Content-Type: application/json; charset=UTF-8');
-        die(json_encode(array('message' => 'ERROR', 'code' => 0808)));
+        die(json_encode(array('message' => 'INVALID CREDENTIALS', 'code' => 1337)));
     }
 ?>
  
