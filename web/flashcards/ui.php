@@ -17,11 +17,13 @@
         function login(){
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
+            var isreturn = false;
 
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (xhttp.readyState>3 && xhttp.status==200) { 
                     alert("logged in!");
+                    isreturn = true;
                 }
                 else if (xhttp.status >= 500) { 
                     alert("Sorry the provided credentials are incorrect.");
@@ -33,6 +35,7 @@
             xhttp.open("POST",  "signin.php", true);
             xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhttp.send("username=" + username + "&password=" + password);
+            return isreturn;
         }
 
         function newAccount(){
