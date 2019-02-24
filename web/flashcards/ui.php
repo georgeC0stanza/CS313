@@ -19,6 +19,14 @@
             var password = document.getElementById("password").value;
             var isreturn = false;
 
+            callAjaxfunc(function() {
+                console.log('Pass2');
+            });
+
+            return isreturn;
+        }
+
+        function callAjaxfunc(callback) {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (xhttp.readyState>3 && xhttp.status==200) { 
@@ -35,7 +43,11 @@
             xhttp.open("POST",  "signin.php", true);
             xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhttp.send("username=" + username + "&password=" + password);
-            return isreturn;
+            
+            onAjaxSuccess: function() {
+                callback();
+            };
+            console.log('Pass1');    
         }
 
         function newAccount(){
