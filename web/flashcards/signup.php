@@ -14,8 +14,14 @@
         $query = "SELECT id, FROM person WHERE username = '$user_username'";
         $statement = $db->prepare($query);
         $statement->execute();
-        $id = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $user = $statement->fetchAll(PDO::FETCH_ASSOC);
         
+        $id;
+    
+        foreach ($user as $user_element) {
+            $id = $user_element['id'];
+        }
+
         if ($id > 0)
         {
 
@@ -24,14 +30,13 @@
             $statement = $db->prepare($query);
             $statement->execute();
         }
-        else 
-        {
 
-        }
     }
     else
     {
-
+        header('HTTP/1.1 500 Internal Server Error');
+        header('Content-Type: application/json; charset=UTF-8');
+        die(json_encode(array('message' => 'INVALID CREDENTIALS', 'code' => 1337)));
     }
 ?>
  
