@@ -33,7 +33,6 @@
             xhttp.open("POST",  "signin.php", true);
             xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhttp.send("username=" + username + "&password=" + password);
-            return true;
         }
 
         function newAccount(){
