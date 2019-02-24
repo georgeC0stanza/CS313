@@ -11,16 +11,31 @@
 
     if ($user_password == $user_password2)
     {
-        $hashed_password = password_hash($user_password, PASSWORD_DEFAULT);
-        $query = "INSERT INTO person (username, passwrd) VALUES ('$user_username', '$hashed_password')";
+        $query = "SELECT id, FROM person WHERE username = '$user_username'";
         $statement = $db->prepare($query);
         $statement->execute();
+        $id = $statement->fetchAll(PDO::FETCH_ASSOC);
+        
+        if ($id > 0)
+        {
+
+            $hashed_password = password_hash($user_password, PASSWORD_DEFAULT);
+            $query = "INSERT INTO person (username, passwrd) VALUES ('$user_username', '$hashed_password')";
+            $statement = $db->prepare($query);
+            $statement->execute();
+        }
+        else 
+        {
+            header('HTTP/1.1 500 Internal Server Error');
+            header('Content-Type: application/json; charset=UTF-8');
+            die(json_encode(array('message' => 'ERROR', 'code' => 1)));
+        }
     }
     else
     {
         header('HTTP/1.1 500 Internal Server Error');
         header('Content-Type: application/json; charset=UTF-8');
-        die(json_encode(array('message' => 'INVALID CREDENTIALS', 'code' => 1337)));
+        die(json_encode(array('message' => 'ERROR', 'code' => 2)));
     }
 ?>
  
