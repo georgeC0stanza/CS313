@@ -12,7 +12,7 @@
     if ($user_password == $user_password2)
     {
         $hashed_password = password_hash($user_password, PASSWORD_DEFAULT);
-        $query = "INSERT INTO person (username, passwrd) VALUES ($user_username, $hashed_password)";
+        $query = "INSERT INTO person (username, passwrd) VALUES ('$user_username', '$hashed_password')";
         $statement = $db->prepare($query);
         $statement->execute();
     }
