@@ -53,7 +53,7 @@
             xhttp.open("POST",  "signup.php", true);
             xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhttp.send("username=" + username + "&password=" + password + "&password2=" + password2);
-            return true;
+            return false;
         }
 
     </script>
