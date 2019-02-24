@@ -8,7 +8,7 @@
     $new_back = htmlspecialchars($_POST["new_back"]);
     $user_id = $_SESSION["user_id"];
 
-    $query = "INSERT INTO cardset (user_id, front, back) VALUES ('$user_id', '$new_front', '$new_back')";
+    $query = "INSERT INTO cardset (user_id, cardtext_front, cardtext_back) VALUES ('$user_id', '$new_front', '$new_back')";
 
     $statement = $db->prepare($query);
 //    $statement->bindValue(':user_id', $user_id, PDO::PARAM_STR);
