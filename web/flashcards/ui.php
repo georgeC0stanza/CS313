@@ -15,8 +15,8 @@
     <script>
 
         function login(){
-            val username = document.getElementById("username").value;
-            val password = document.getElementById("password").value;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
 
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
