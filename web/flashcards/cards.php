@@ -88,7 +88,7 @@
     }
 
 ?>
-        <p>Add a New Card:</p>
+        <h3>Add a New Card:</h3>
         <textarea id="new_front" required placeholder="Front of Card"></textarea>
         <textarea id="new_back" required placeholder="Back of Card"></textarea>
         <br/>
