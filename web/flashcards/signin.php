@@ -23,7 +23,7 @@
 
     if(password_verify($user_password, $db_password)) {
         
-        $_session["user_id"] = $id;
+        $_SESSION["user_id"] = $id;
 
     } 
     else

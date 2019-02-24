@@ -6,7 +6,7 @@
 
     $new_front = htmlspecialchars($_POST["new_front"]);
     $new_back = htmlspecialchars($_POST["new_back"]);
-    $user_id = $_session["user_id"];
+    $user_id = $_SESSION["user_id"];
 
     $query = "INSERT INTO cardset (user_id, new_front, new_back) VALUES ($user_id, $new_front, $new_back) ";
 
