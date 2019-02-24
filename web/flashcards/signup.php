@@ -16,11 +16,11 @@
         $statement = $db->prepare($query);
         $statement->execute();
     }
- /*   else
+    else
     {
         header('HTTP/1.1 599 Internal Server Error');
         header('Content-Type: application/json; charset=UTF-8');
-        die(json_encode(array('message' => 'PASSWORD MISMATCH', 'code' => 0808)));
-    }*/
+        die(json_encode(array('message' => 'ERROR', 'code' => 0808)));
+    }
 ?>
  
