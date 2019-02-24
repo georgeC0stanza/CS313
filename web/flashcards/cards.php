@@ -15,6 +15,7 @@
          function addNewCard(){
             new_front = document.getElementById("new_front").value;
             new_back = document.getElementById("new_back").value;
+            console.log(new_front);
 
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
