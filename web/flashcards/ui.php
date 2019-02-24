@@ -87,7 +87,7 @@
             <br/>
 
 
-            <span>Password:</span>
+            <span>Password: </span>
             <input id = "password" required type="text">
             <br/>
             <br/>
@@ -96,8 +96,8 @@
         </div>
 
     </form>
-
-        <form name="form_new_account" action = "" id = "new_account" method="POST" onsubmit="return newAccount()">
+    <br/>
+    <form name="form_new_account" action = "" id = "new_account" method="POST" onsubmit="return newAccount()">
         <div class="whole">
             <h1>Create a New Account</h1>
             <hr/>
@@ -107,7 +107,7 @@
             <br/>
 
 
-            <span>Password:</span>
+            <span>Password: </span>
             <input id = "create_password" required type="text">
             <br/>
 
