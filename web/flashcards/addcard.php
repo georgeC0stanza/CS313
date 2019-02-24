@@ -16,7 +16,4 @@
 //    $statement->bindValue(':new_back', $new_back, PDO::PARAM_INT);
     $result = $statement->execute();
 
-    flush();
-    die();
-
 ?>
