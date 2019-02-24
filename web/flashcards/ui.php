@@ -14,11 +14,17 @@
 
     <script>
 
-        function login(username){
+        function login(){
+            val username = document.getElementById("username").value;
+            val password = document.getElementById("password").value;
+
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (xhttp.readyState>3 && xhttp.status==200) { 
                     alert("logged in!");
+                }
+                if (xhttp.status >= 500) { 
+                    alert("Sorry the provided credentials are incorrect.");
                 }
                 if (xhttp.status >= 300) { 
                     alert("error logging in!");
@@ -26,7 +32,27 @@
             };
             xhttp.open("POST",  "signin.php", true);
             xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhttp.send("username=" + username);
+            xhttp.send("username=" + username + "&password=" + password);
+            return true;
+        }
+
+        function newAccount(){
+            val username = document.getElementById("create_username").value;
+            val password = document.getElementById("create_password").value;
+            val password2 = document.getElementById("create_password2").value;
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (xhttp.readyState>3 && xhttp.status==200) { 
+                    alert("Congratulations! Your account has been created!");
+                }
+                if (xhttp.status >= 300) { 
+                    alert("Sorry your account cannot be created currently; please try again later.");
+                }
+            };
+            xhttp.open("POST",  "signup.php", true);
+            xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhttp.send("username=" + username + "&password=" + password + "&password2=" + password2);
             return true;
         }
 
@@ -51,33 +77,51 @@
     <br/>
 
 
-    <form name="users" action = "cards.php" id = "username" method="POST" onsubmit="return login(this.id)">
-      <div class="whole">
-          <h1> Welcome</h1>
-          <hr/>
+    <form name="form_sign_in" action = "cards.php" id = "sign_in" method="POST" onsubmit="return login()">
+        <div class="whole">
+            <h1>Sign In</h1>
+            <hr/>
 
-      <div class="section">
-
-
-
-
+            <span>Username:</span>
+            <input id = "username" required type="text">
+            <br/>
 
 
+            <span>Password:</span>
+            <input id = "password" required type="text">
+            <br/>
+            <br/>
+            
+            <input type="submit" class="button" value="Sign In">
+        </div>
+
+    </form>
+
+        <form name="form_new_account" action = "" id = "new_account" method="POST" onsubmit="return newAccount()">
+        <div class="whole">
+            <h1>Create a New Account</h1>
+            <hr/>
+
+            <span>Username:</span>
+            <input id = "create_username" required type="text">
+            <br/>
 
 
-    <p>Username</p>
-    <input id = "username" required type="text">
-    <br/>
-    <input type="submit" class="button" value="Sign In">
+            <span>Password:</span>
+            <input id = "create_password" required type="text">
+            <br/>
+
+            <span>Confirm Password:</span>
+            <input id = "create_password2" required type="text">
+            <br/>
+            <br/>
+            
+            <input type="submit" class="button" value="Create Account">
+        </div>
+
+    </form>
 
 
-
-<!--
-    echo "<input type=\"button\" class=\"button\" name=", $file, "\" Value= \"Add to Cart\" onclick=\"addToCart(this.name)\"/>";
-    echo "<br />";
-
-
--->
 <?php
 
 
@@ -129,11 +173,6 @@
     */
 ?>
 
-      </div>
-      <div>        
-        <p id="page"></p> 
-      </div>
-    </form>
 
   </body>
 </html>
