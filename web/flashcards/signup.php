@@ -8,15 +8,15 @@
     $user_username = htmlspecialchars($_POST["username"]);
     $user_password = htmlspecialchars($_POST["password"]);
     $user_password2 = htmlspecialchars($_POST["password2"]);
-/*
+
     if ($user_password == $user_password2)
     {
         $hashed_password = password_hash($user_password, PASSWORD_DEFAULT);
         $query = "INSERT INTO person (username, passwrd) VALUES ('$user_username', '$hashed_password')";
         $statement = $db->prepare($query);
-        $statement->execute();
+//        $statement->execute();
     }
-    else
+ /*   else
     {
         header('HTTP/1.1 599 Internal Server Error');
         header('Content-Type: application/json; charset=UTF-8');
