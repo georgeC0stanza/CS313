@@ -1,7 +1,7 @@
 <?php
     session_start();
     
-    require_once('dbconnect.php');
+    require('dbconnect.php');
     $db = get_db();
 
     
@@ -9,7 +9,7 @@
     $user_password = htmlspecialchars($_POST["password"]);
     $user_password2 = htmlspecialchars($_POST["password2"]);
 
-    if (true)//$user_password == $user_password2)
+    if ($user_password == $user_password2)
     {
         $hashed_password = password_hash($user_password, PASSWORD_DEFAULT);
         $query = "INSERT INTO person (username, passwrd) VALUES ('$user_username', '$hashed_password')";
