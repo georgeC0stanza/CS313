@@ -7,7 +7,12 @@
     $user_username = htmlspecialchars($_POST["username"]);
     $user_password = htmlspecialchars($_POST["password"]);
 
-   
+    //
+    $hashed_password = password_hash($user_password, PASSWORD_DEFAULT);
+    $query = "UPDATE person SET passwrd = ' $hashed_password ' WHERE username = '$user_username'";
+    $statement = $db->prepare($query);
+    $statement->execute();
+   //
 
     $query = "SELECT id, passwrd FROM person WHERE username = '$user_username'";
     $statement = $db->prepare($query);
