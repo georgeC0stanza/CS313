@@ -23,10 +23,10 @@
                 if (xhttp.readyState>3 && xhttp.status==200) { 
                     alert("logged in!");
                 }
-                if (xhttp.status >= 500) { 
+                else if (xhttp.status >= 500) { 
                     alert("Sorry the provided credentials are incorrect.");
                 }
-                if (xhttp.status >= 300) { 
+                else if (xhttp.status >= 300) { 
                     alert("error logging in!");
                 }
             };
@@ -46,7 +46,7 @@
                 if (xhttp.readyState>3 && xhttp.status==200) { 
                     alert("Congratulations! Your account has been created!");
                 }
-                if (xhttp.status >= 300) { 
+                else if (xhttp.status >= 300) { 
                     alert("Sorry your account cannot be created currently; please try again later.");
                 }
             };
