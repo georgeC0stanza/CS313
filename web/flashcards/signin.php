@@ -9,7 +9,7 @@
 
     //
     $hashed_password = password_hash($user_password, PASSWORD_DEFAULT);
-    $query = "UPDATE person SET passwrd = ' $hashed_password ' WHERE username = '$user_username'";
+    $query = "UPDATE person SET passwrd = '$hashed_password' WHERE username = '$user_username'";
     $statement = $db->prepare($query);
     $statement->execute();
    //
