@@ -13,8 +13,8 @@
      <script type="text/javascript" src="script.js"></script>
      <script>
          function addNewCard(){
-            new_front = document.getElementById("new_front").innertext;
-            new_back = document.getElementById("new_back").innertext;
+            new_front = document.getElementById("new_front").value;
+            new_back = document.getElementById("new_back").value;
 
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
@@ -65,7 +65,6 @@
     $user_id = $_session["user_id"];
     $user_id = 1 ;
 
-    echo ($user_id);
     $statement = $db->prepare("SELECT id, cardtext_front, cardtext_back FROM cardset WHERE user_id = '$user_id' ");
     $statement->execute();
     // Go through each result
