@@ -50,10 +50,11 @@
         echo ("<div id='$card_number'> 
                 --------------------------------------------------------------------------------------------
                 <span>$cardtext_front</span> || 
-                <span id='card_id_$count_id'>$cardtext_back </span>
+                <span hidden id='card_id_$count_id'>$cardtext_back </span>
                 --------------------------------------------------------------------------------------------
                 <button type='button' onclick='flipcard(\"card_id_$count_id\")'>Flip Card!</button> 
                 </div>");
+                $count_id ++;
     }
 
 ?>
