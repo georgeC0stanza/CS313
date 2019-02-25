@@ -73,14 +73,14 @@ function addNewCard(){
     xhttp.open("POST",  "addcard.php", true);
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhttp.send("new_front=" + new_front + "&new_back=" + new_back);
-    return true;
+    return false;
  }
 
 
 
  
  /***************************************************************
- * sends a request for the back of a card
+ * toggles each card flip
  */
  function flipcard(card_id)
  {
@@ -90,8 +90,5 @@ function addNewCard(){
     } else {
       x.style.visibility = 'hidden';
     }
-
-
-    //document.getElementById(card_id).style.visibility = "visible";
  } 
  
