@@ -52,7 +52,7 @@
                 <span>$cardtext_front</span> || 
                 <span id='card_id_$count_id'>$cardtext_back </span>
                 --------------------------------------------------------------------------------------------
-                <button onclick='flipcard('card_id_$count_id')'>Flip Card!</button> 
+                <button type='button' onclick='flipcard(\"card_id_$count_id\")'>Flip Card!</button> 
                 </div>");
     }
 
