@@ -50,13 +50,16 @@
         
 
         echo ("<div id='$card_number'> 
-                <span>$cardtext_front</span>
-                <div id='$count_id'>$cardtext_back </div>
-                <button type='button' onclick='flipcard(this)'>Flip Card!</button> 
+                --------------------------------------------------------------------------------------------
+                <span>$cardtext_front</span> || 
+                <span id='card_id_$count_id'>$cardtext_back </span>
+                --------------------------------------------------------------------------------------------
+                <button type='button' onclick='flipcard('card_id_$count_id')'>Flip Card!</button> 
                 </div>");
     }
 
 ?>
+        <hr/>
         <h3>Add a New Card:</h3>
         <textarea id="new_front" required placeholder="Front of Card"></textarea>
         <textarea id="new_back" required placeholder="Back of Card"></textarea>

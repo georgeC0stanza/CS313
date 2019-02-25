@@ -90,5 +90,8 @@ function addNewCard(){
     } else {
       x.style.visibility = 'hidden';
     }
+
+
+    //document.getElementById(card_id).style.visibility = "visible";
  } 
  
