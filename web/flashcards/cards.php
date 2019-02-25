@@ -2,7 +2,6 @@
     session_start();
     require "dbconnect.php";
     $db = get_db();
-
 ?>
 
 <!DOCTYPE html>
@@ -11,35 +10,7 @@
      <meta charset="utf-8"/>
      <title>Week 03</title>
      <script type="text/javascript" src="script.js"></script>
-     <script>
-         function addNewCard(){
-            new_front = document.getElementById("new_front").value;
-            new_back = document.getElementById("new_back").value;
 
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (xhttp.readyState>3 && xhttp.status==200) { 
-                    alert("card added!");
-                }
-                if (xhttp.status >= 300) { 
-                    alert("error adding card!");
-                }
-            };
-            xhttp.open("POST",  "addcard.php", true);
-            xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhttp.send("new_front=" + new_front + "&new_back=" + new_back);
-            return false;
-         }
-     </script>
-     <script> 
-     
-        function flipcard(card_id)
-        {
-           document.getElementById(card_id).style.visibility = "visible";
-        } 
-        
-     
-     </script> 
     <link rel="stylesheet" type="text/css" href="css.css">
    </head>
 
@@ -54,7 +25,7 @@
     <br/>
 
 
-    <form name="users" action = "" id = "usersname" method="POST" onsubmit="return addNewCard()">
+    <form name="users" action = "cards.php" id = "usersname" method="POST" onsubmit="return addNewCard()">
       <div class="whole">
           <h1> What would You like To study Today?</h1>
           <hr/>
@@ -80,7 +51,7 @@
 
         echo ("<div id='$card_number'> 
                 <span>$cardtext_front</span>
-                <span hidden id='$count_id'>$cardtext_back </span>
+                <span id='$count_id'>$cardtext_back </span>
                 <button type='button' onclick='flipcard(this)'>Flip Card!</button> 
                 </div>");
     }

@@ -1,55 +1,94 @@
 
 
-
-
-
-
-
-
-
-function addToCart(itemName){
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (xhttp.readyState>3 && xhttp.status==200) { 
-            alert("Cart Updated!");
-         }
-    };
-    xhttp.open("POST",  "addItem.php", true);
-    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhttp.send("item=" + itemName);
-}
-
-
-
-
-function removeFromCart(itemName){
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (xhttp.readyState>3 && xhttp.status==200) { 
-            alert("Cart Updated!");
-         }
-    };
-    xhttp.open("POST",  "removeItem.php", true);
-    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhttp.send("item=" + itemName);
-}
-
-
-
-
-function purchase(){
-
-    var address = document.getElementById("address");
-
+/***************************************************************
+ * sends login information to the server
+ */
+function login(){
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var isreturn = false;
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState>3 && xhttp.status==200) { 
-            window.location = "confirmation.php";
-         }
+            //alert("logged in!");
+            isreturn = true;
+        }
+        else if (xhttp.status >= 500) { 
+            alert("Sorry the provided credentials are incorrect.");
+        }
+        else if (xhttp.status >= 300) { 
+            alert("error logging in!");
+        }
     };
-    xhttp.open("POST",  "purchase.php", true);
+    xhttp.open("POST",  "signin.php", false);
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhttp.send("address=" + address);
+    xhttp.send("username=" + username + "&password=" + password);
+    return isreturn;
 }
 
+/***************************************************************
+ * sends new account information to the server to create that account
+ */
+function newAccount(){
+    var username = document.getElementById("create_username").value;
+    var password = document.getElementById("create_password").value;
+    var password2 = document.getElementById("create_password2").value;
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState>3 && xhttp.status==200) { 
+            alert("Congratulations! Your account has been created!");
+        }
+        else if (xhttp.status == 599) { 
+            alert("Sorry you passwords don't match!");
+        }
+        else if (xhttp.status >= 300) { 
+            alert("Sorry your account cannot be created currently; please try again later.");
+        }
+    };
+    xhttp.open("POST",  "signup.php", false);
+    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhttp.send("username=" + username + "&password=" + password + "&password2=" + password2);
+    return false;
+}
+
+
+/***************************************************************
+ * sends a request to add a new card to the database
+ */
+function addNewCard(){
+    new_front = document.getElementById("new_front").value;
+    new_back = document.getElementById("new_back").value;
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState>3 && xhttp.status==200) { 
+            alert("card added!");
+        }
+        if (xhttp.status >= 300) { 
+            alert("error adding card!");
+        }
+    };
+    xhttp.open("POST",  "addcard.php", true);
+    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhttp.send("new_front=" + new_front + "&new_back=" + new_back);
+    return false;
+ }
+
+
+
+ 
+ /***************************************************************
+ * sends a request for the back of a card
+ */
+ function flipcard(card_id)
+ {
+    var x = document.getElementById(card_id);
+    if (x.style.visibility === 'hidden') {
+      x.style.visibility = 'visible';
+    } else {
+      x.style.visibility = 'hidden';
+    }
+ } 
+ 

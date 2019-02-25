@@ -10,63 +10,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>comingalongnicely.jpg</title>
-   <!-- <script type="text/javascript" src="script.js"></script> -->
-
-    <script>
-
-        function login(){
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-            var isreturn = false;
-
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (xhttp.readyState>3 && xhttp.status==200) { 
-                    alert("logged in!");
-                    isreturn = true;
-                }
-                else if (xhttp.status >= 500) { 
-                    alert("Sorry the provided credentials are incorrect.");
-                }
-                else if (xhttp.status >= 300) { 
-                    alert("error logging in!");
-                }
-            };
-            xhttp.open("POST",  "signin.php", false);
-            xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhttp.send("username=" + username + "&password=" + password);
-            return isreturn;
-        }
-
-        function newAccount(){
-            var username = document.getElementById("create_username").value;
-            var password = document.getElementById("create_password").value;
-            var password2 = document.getElementById("create_password2").value;
-
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (xhttp.readyState>3 && xhttp.status==200) { 
-                    alert("Congratulations! Your account has been created!");
-                }
-                else if (xhttp.status == 599) { 
-                    alert("Sorry you passwords don't match!");
-                }
-                else if (xhttp.status >= 300) { 
-                    alert("Sorry your account cannot be created currently; please try again later.");
-                }
-            };
-            xhttp.open("POST",  "signup.php", false);
-            xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhttp.send("username=" + username + "&password=" + password + "&password2=" + password2);
-            return false;
-        }
-
-    </script>
-
-
-
-    <link rel="stylesheet" type="text/css" href="css.css">
-  
+        <script type="text/javascript" src="script.js"></script> 
+        <link rel="stylesheet" type="text/css" href="css.css">
   </head>
   
 <body>
