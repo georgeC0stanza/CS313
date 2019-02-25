@@ -39,6 +39,10 @@ img {
     overflow: hidden;
 }
 
+.hidden {
+    visibility:hidden;
+}
+
 @media screen and (max-width: 600px) {
     .headerSmall {
         float: none;
