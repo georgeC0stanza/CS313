@@ -92,3 +92,20 @@ function addNewCard(){
     }
  } 
  
+
+
+
+ function validate_passwords(){
+    var pass1 = document.getElementById("create_password").value;
+    var pass2 = document.getElementById("create_password2").value;
+
+    if (pass1 === pass2)
+    {
+        document.getElementsByName(password_validation)[0].textContent = "";
+            expValidation = true;
+    } else {
+            document.getElementsByName(password_validation)[0].textContent = "Passwords do not match!";
+            expValidation = false;
+    }
+}
+

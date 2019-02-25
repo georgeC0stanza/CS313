@@ -62,7 +62,8 @@
             <br/>
 
             <span>Confirm Password:</span>
-            <input id = "create_password2" required type="text">
+            <input id = "create_password2" required type="text" oninput="validate_passwords()">
+            <p name="password_validation" style='color:red;'></p>
             <br/>
             <br/>
             
