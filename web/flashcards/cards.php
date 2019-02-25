@@ -51,7 +51,7 @@
 
         echo ("<div id='$card_number'> 
                 <span>$cardtext_front</span>
-                <span id='$count_id'>$cardtext_back </span>
+                <div id='$count_id'>$cardtext_back </div>
                 <button type='button' onclick='flipcard(this)'>Flip Card!</button> 
                 </div>");
     }
