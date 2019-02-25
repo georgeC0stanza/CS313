@@ -70,10 +70,10 @@ function addNewCard(){
             alert("error adding card!");
         }
     };
-    xhttp.open("POST",  "addcard.php", true);
+    xhttp.open("POST",  "addcard.php", false);
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhttp.send("new_front=" + new_front + "&new_back=" + new_back);
-    return false;
+    return true;
  }
 
 
