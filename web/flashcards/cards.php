@@ -30,8 +30,6 @@
           <h1> What would You like To study Today?</h1>
           <hr/>
 
-      <div class="section">
-
 <?php
     $user_id = $_SESSION["user_id"];
 
@@ -54,7 +52,7 @@
                 <span>$cardtext_front</span> || 
                 <span id='card_id_$count_id'>$cardtext_back </span>
                 --------------------------------------------------------------------------------------------
-                <button type='button' onclick='flipcard('card_id_$count_id')'>Flip Card!</button> 
+                <button onclick='flipcard('card_id_$count_id')'>Flip Card!</button> 
                 </div>");
     }
 
