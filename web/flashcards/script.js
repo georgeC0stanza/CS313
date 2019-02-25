@@ -101,10 +101,10 @@ function addNewCard(){
 
     if (pass1 === pass2)
     {
-        document.getElementsByName(password_validation)[0].textContent = "";
+        document.getElementsByName('password_validation')[0].textContent = "";
             expValidation = true;
     } else {
-            document.getElementsByName(password_validation)[0].textContent = "Passwords do not match!";
+            document.getElementsByName('password_validation')[0].textContent = "Passwords do not match!";
             expValidation = false;
     }
 }
