@@ -65,8 +65,7 @@
             <input id = "create_password2" required type="text" oninput="validate_passwords()">
             <p name="password_validation" style='color:red;'></p>
             <br/>
-            <br/>
-            
+
             <input type="submit" class="button" value="Create Account">
         </div>
 

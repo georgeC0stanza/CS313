@@ -1,4 +1,23 @@
+/*************************************************************************************
+ * UI.PHP login/sign up page functions
+ *************************************************************************************/
 
+/***************************************************************
+ * validate passwords
+ */
+function validate_passwords(){
+    var pass1 = document.getElementById("create_password").value;
+    var pass2 = document.getElementById("create_password2").value;
+
+    if (pass1 === pass2)
+    {
+        document.getElementsByName('password_validation')[0].textContent = "";
+            expValidation = true;
+    } else {
+            document.getElementsByName('password_validation')[0].textContent = "Passwords do not match!";
+            expValidation = false;
+    }
+}
 
 /***************************************************************
  * sends login information to the server
@@ -54,6 +73,15 @@ function newAccount(){
 }
 
 
+
+
+
+
+/*************************************************************************************
+ * CARDS.PHP: page of cards functions
+ *************************************************************************************/
+
+
 /***************************************************************
  * sends a request to add a new card to the database
  */
@@ -93,19 +121,4 @@ function addNewCard(){
  } 
  
 
-
-
- function validate_passwords(){
-    var pass1 = document.getElementById("create_password").value;
-    var pass2 = document.getElementById("create_password2").value;
-
-    if (pass1 === pass2)
-    {
-        document.getElementsByName('password_validation')[0].textContent = "";
-            expValidation = true;
-    } else {
-            document.getElementsByName('password_validation')[0].textContent = "Passwords do not match!";
-            expValidation = false;
-    }
-}
 
